@@ -37,14 +37,14 @@ void setup()
 
   // Set up display
   tft.begin();
-  //tft.setRotation(1);
-  tft.setRotation(3);
-  tft.setTextSize(2);
-  tft.fillScreen(TFT_BLACK);
+  //tft.setRotation(1); //Power on right
+  tft.setRotation(3); //Power on left
+  tft.setTextSize(2); //Do I even need this?
+  tft.fillScreen(TFT_BLACK);  //black background
   delay(500);
-  tft.fillScreen(TFT_WHITE);
+  tft.fillScreen(TFT_WHITE);  //white background
   delay(500);
-  tft.fillScreen(TFT_BLACK);
+  tft.fillScreen(TFT_BLACK);  //black background
   ledcSetup(0, 2000, 8);
 
   // Turn on backlight
@@ -78,6 +78,7 @@ void updateSpeed()
     --displaySpeed;
     sprintf(mph, "%d", displaySpeed);
   }
+  
   
   // display the new value
   tft.setTextColor(TFT_LIGHTGREY, TFT_BLACK);
